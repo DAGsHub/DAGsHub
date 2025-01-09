@@ -81,7 +81,7 @@ class RepoAPI:
 
     @retry(retry=retry_if_exception_type(LSInitializingError), wait=wait_fixed(3), stop=stop_after_attempt(5))
     def _tenacious_ls_request(self, *args, **kwargs):
-        res = self.http_request(*args, **kwargs)
+        res = http_request(*args, **kwargs)
         if res.text.startswith("<!DOCTYPE html>"):
             raise LSInitializingError()
         elif res.status_code // 100 != 2:

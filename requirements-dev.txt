@@ -7,3 +7,4 @@ pytest-mock==3.14.0
 fiftyone==0.23.8
 datasets==2.19.1
 ultralytics==8.3.47
+label-studio-sdk==1.0.8
